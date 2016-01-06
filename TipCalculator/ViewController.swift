@@ -9,17 +9,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var billAmountTextField: UITextField!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.setupDefaultValues()
+        billAmountTextField.becomeFirstResponder()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    @IBAction func onEditingChanges(sender: AnyObject) {
+        print("things changes")
+        let billAmount = Double(billAmountTextField.text!)
+        let tip = billAmount! * 0.2
+        let total = billAmount! + tip;
+        
+        tipLabel.text = String(format: "$%.2f", tip)
+        totalLabel.text = String(format: "$%.2f", total)
+    }
+    
+    func setupDefaultValues() {
+        totalLabel.text = "$0.00"
+        tipLabel.text = "$0.00"
+    }
 }
 
