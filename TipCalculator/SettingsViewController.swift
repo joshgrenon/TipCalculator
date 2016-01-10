@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var tipPercentages: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.styleUI()
         self.loadDefaulData()
     }
 
@@ -35,5 +36,10 @@ class SettingsViewController: UIViewController {
         } else {
             tipPercentages.selectedSegmentIndex = defaultTip as! Int;
         }
+    }
+    
+    func styleUI() {
+        self.view.tintColor = Stylesheet.baseColor()
+        self.navigationController?.navigationBar.tintColor = Stylesheet.baseColor()
     }
 }

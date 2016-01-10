@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.styleUI()
         billAmountTextField.becomeFirstResponder()
     }
     
@@ -78,6 +79,11 @@ class ViewController: UIViewController {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
         return formatter.stringFromNumber(value)!
+    }
+    
+    func styleUI() {
+        self.view.tintColor = Stylesheet.baseColor()
+        self.navigationController?.navigationBar.tintColor = Stylesheet.baseColor()
     }
 }
 
