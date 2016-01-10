@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		480412951C40E849007E9E4C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480412941C40E849007E9E4C /* SettingsViewController.swift */; };
 		480412991C40F0AF007E9E4C /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480412981C40F0AF007E9E4C /* Calculator.swift */; };
+		4804129B1C41F74F007E9E4C /* BillAmountCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4804129A1C41F74F007E9E4C /* BillAmountCacher.swift */; };
 		483E38761C3CE7DB0083B6ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E38751C3CE7DB0083B6ED /* AppDelegate.swift */; };
 		483E38781C3CE7DB0083B6ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483E38771C3CE7DB0083B6ED /* ViewController.swift */; };
 		483E387B1C3CE7DB0083B6ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 483E38791C3CE7DB0083B6ED /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		480412941C40E849007E9E4C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		480412981C40F0AF007E9E4C /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		4804129A1C41F74F007E9E4C /* BillAmountCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BillAmountCacher.swift; sourceTree = "<group>"; };
 		483E38721C3CE7DB0083B6ED /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		483E38751C3CE7DB0083B6ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		483E38771C3CE7DB0083B6ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				483E387E1C3CE7DB0083B6ED /* LaunchScreen.storyboard */,
 				483E38811C3CE7DB0083B6ED /* Info.plist */,
 				480412981C40F0AF007E9E4C /* Calculator.swift */,
+				4804129A1C41F74F007E9E4C /* BillAmountCacher.swift */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				480412991C40F0AF007E9E4C /* Calculator.swift in Sources */,
 				483E38761C3CE7DB0083B6ED /* AppDelegate.swift in Sources */,
 				480412951C40E849007E9E4C /* SettingsViewController.swift in Sources */,
+				4804129B1C41F74F007E9E4C /* BillAmountCacher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

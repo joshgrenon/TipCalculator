@@ -22,8 +22,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.loadDefaulData()
         billAmountTextField.becomeFirstResponder()
     }
     
@@ -33,12 +31,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEditingChanges(sender: AnyObject) {
-        
+        self.calculateAndDisplayData()
+    }
+    
+    func calculateAndDisplayData() {
         if (billAmountTextField.text?.length == 0) {
-            self.loadDefaulData()
             return;
         }
         
+        BillAmountCacher.saveBillAmount(billAmountTextField.text!)
         let tipPercentage = Calculator().tipPercentages[segTips.selectedSegmentIndex]
         let billAmount = Double(billAmountTextField.text!)
         let tip = billAmount! * tipPercentage
@@ -48,12 +49,12 @@ class ViewController: UIViewController {
         totalLabel.text = self.formatStringAsCurrency(total)
     }
     
-    
     @IBAction func tipPercentageChanged(sender: AnyObject) {
-        [self .onEditingChanges(billAmountTextField)]
+        self.calculateAndDisplayData()
     }
     
     func loadDefaulData() {
+        billAmountTextField.text = BillAmountCacher.billAmountCached()
         totalLabel.text = self.formatStringAsCurrency(0)
         tipLabel.text = self.formatStringAsCurrency(0)
         
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
         } else {
             segTips.selectedSegmentIndex = defaultTip as! Int;
         }
+        self.calculateAndDisplayData()
     }
     
     @IBAction func showSettingsController(sender: AnyObject) {
