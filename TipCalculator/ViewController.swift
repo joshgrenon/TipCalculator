@@ -8,6 +8,10 @@
 
 import UIKit
 
+extension String {
+    var length: Int { return self.characters.count }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var barSettings: UIBarButtonItem!
@@ -30,7 +34,8 @@ class ViewController: UIViewController {
     
     @IBAction func onEditingChanges(sender: AnyObject) {
         
-        if (billAmountTextField.text == nil) {
+        if (billAmountTextField.text?.length == 0) {
+            self.loadDefaulData()
             return;
         }
         
@@ -39,8 +44,8 @@ class ViewController: UIViewController {
         let tip = billAmount! * tipPercentage
         let total = billAmount! + tip;
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = self.formatStringAsCurrency(tip)
+        totalLabel.text = self.formatStringAsCurrency(total)
     }
     
     
@@ -49,8 +54,8 @@ class ViewController: UIViewController {
     }
     
     func loadDefaulData() {
-        totalLabel.text = "$0.00"
-        tipLabel.text = "$0.00"
+        totalLabel.text = self.formatStringAsCurrency(0)
+        tipLabel.text = self.formatStringAsCurrency(0)
         
         let defaultTip = NSUserDefaults.standardUserDefaults().objectForKey("defaultTipPercentage")
         
@@ -65,6 +70,12 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("settingsViewController")
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func formatStringAsCurrency(value: Double) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        return formatter.stringFromNumber(value)!
     }
 }
 
